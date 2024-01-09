@@ -2,60 +2,9 @@ import Head from 'next/head'
 import Image from "next/legacy/image"
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { articles } from "../const/articles"
 
 const inter = Inter({ subsets: ['latin'] })
-
-const articles = [
-  {
-    id: 1,
-    title: 'ブログタイトル1つ目',
-    image: 'https://placehold.jp/200x200.png',
-    summary: 'ブログ1つ目の要約',
-    date: '2024/01/09'
-  },
-  {
-    id: 2,
-    title: 'ブログタイトル2つ目',
-    image: 'https://placehold.jp/150x150.png',
-    summary: 'ブログ2つ目の要約',
-    date: '2024/01/09'
-  },
-  {
-    id: 3,
-    title: 'ブログタイトル3つ目',
-    image: 'https://placehold.jp/150x200.png',
-    summary: 'ブログ3つ目の要約ブログ3つ目の要約ブログ3つ目の要約ブログ3つ目の要約ブログ3つ目の要約ブログ3つ目の要約ブログ3つ目の要約ブログ3つ目の要約ブログ3つ目の要約ブログ3つ目の要約',
-    date: '2024/01/09'
-  },
-  {
-    id: 4,
-    title: 'ブログタイトル4つ目',
-    image: 'https://placehold.jp/200x150.png',
-    summary: 'ブログ1つ目の要約',
-    date: '2024/01/09'
-  },
-  {
-    id: 5,
-    title: 'ブログタイトル5つ目',
-    image: 'https://placehold.jp/300x200.png',
-    summary: 'ブログ1つ目の要約',
-    date: '2024/01/09'
-  },
-  {
-    id: 6,
-    title: 'ブログタイトル6つ目',
-    image: 'https://placehold.jp/100x100.png',
-    summary: 'ブログ1つ目の要約',
-    date: '2024/01/09'
-  },
-  {
-    id: 7,
-    title: 'ブログタイトル7つ目',
-    image: 'https://placehold.jp/200x300.png',
-    summary: 'ブログ1つ目の要約',
-    date: '2024/01/09'
-  },
-];
 
 export default function Home() {
   const articleStyle = {
@@ -68,26 +17,37 @@ export default function Home() {
       border: '1px solid',
       borderRadius: '10px',
     },
+    image: {
+      minWidth: '150px',
+    },
     detail: {
       display: 'flex',
       flexDirection: 'column' as const,
       marginLeft: '16px',
       height: '150px',
       width: '100%',
+      overflow: 'hidden',
+      flex: 1,
       title: {
         fontSize: '20px',
         fontWeight: '700',
-      }, 
-      summery: {
+      },
+      summary: {
+        display: '-webkit-box',
+        WebkitBoxOrient: 'vertical',
+        WebkitLineClamp: 3,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        height: 'calc(1.5em * 3)',
+        lineHeight: '1.5',
         marginTop: '8px',
-      }, 
-      date: {
+      } as React.CSSProperties,      date: {
         marginTop: 'auto',
         textAlign: 'right',
         color: 'gray',
         fontSize: '14px',
       } as React.CSSProperties
-    }
+    },
   };
 
   return (
@@ -111,11 +71,12 @@ export default function Home() {
                 width={150} 
                 height={150}
                 objectFit="contain"
+                style={articleStyle.image}
               />
             </div>
             <div style={articleStyle.detail}>
               <p style={articleStyle.detail.title}>{article.title}</p>
-              <p style={articleStyle.detail.summery}>{article.summary}</p>
+              <p style={articleStyle.detail.summary}>{article.summary}</p>
               <p style={articleStyle.detail.date}>{article.date}</p>
             </div>
         </div>
