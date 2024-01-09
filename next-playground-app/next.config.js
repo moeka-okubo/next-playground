@@ -2,7 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['placehold.jp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placehold.jp',
+        port: '',
+        pathname: '/**',
+      },
+  ],
   },
 }
 
