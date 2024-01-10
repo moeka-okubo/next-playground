@@ -41,7 +41,8 @@ export default function Home() {
         height: 'calc(1.5em * 3)',
         lineHeight: '1.5',
         marginTop: '8px',
-      } as React.CSSProperties,      date: {
+      } as React.CSSProperties,
+      date: {
         marginTop: 'auto',
         textAlign: 'right',
         color: 'gray',
@@ -51,7 +52,7 @@ export default function Home() {
   };
 
   return (
-    <>   
+    <>
       <Head>
         <title>Next勉強のページ</title>
         <meta name="description" content="Next.jsを勉強するためのページ" />
@@ -61,25 +62,26 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <h1>勉強でブログっぽいTOPにしてみる</h1>
         {articles.map(article => (
-          <div key={article.id} style={articleStyle.list}>
-            
-            <div>
-              <Image
-                src={article.image} 
-                alt="ブログ画像"
-                layout="intrinsic"
-                width={150} 
-                height={150}
-                objectFit="contain"
-                style={articleStyle.image}
-              />
+          <a key={article.id} href={`/article/${article.id}`} style={{width: '100%'}}>
+            <div style={articleStyle.list}>
+              <div>
+                <Image
+                  src={article.image}
+                  alt="ブログ画像"
+                  layout="intrinsic"
+                  width={150}
+                  height={150}
+                  objectFit="contain"
+                  style={articleStyle.image}
+                  />
+              </div>
+              <div style={articleStyle.detail}>
+                <p style={articleStyle.detail.title}>{article.title}</p>
+                <p style={articleStyle.detail.summary}>{article.summary}</p>
+                <p style={articleStyle.detail.date}>{article.date}</p>
+              </div>
             </div>
-            <div style={articleStyle.detail}>
-              <p style={articleStyle.detail.title}>{article.title}</p>
-              <p style={articleStyle.detail.summary}>{article.summary}</p>
-              <p style={articleStyle.detail.date}>{article.date}</p>
-            </div>
-        </div>
+          </a>
         ))}
 
       </main>
