@@ -1,10 +1,5 @@
-import Head from 'next/head'
 import Image from "next/legacy/image"
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import { articles } from "../const/articles"
-
-const inter = Inter({ subsets: ['latin'] })
 
 function Home() {
   const articleStyle = {
