@@ -6,7 +6,7 @@ import { articles } from "../const/articles"
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+function Home() {
   const articleStyle = {
     list: {
       width: '100%',
@@ -53,38 +53,37 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Next勉強のページ</title>
-        <meta name="description" content="Next.jsを勉強するためのページ" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <h1>勉強でブログっぽいTOPにしてみる</h1>
-        {articles.map(article => (
-          <a key={article.id} href={`/article/${article.id}`} style={{width: '100%'}}>
-            <div style={articleStyle.list}>
-              <div>
-                <Image
-                  src={article.image}
-                  alt="ブログ画像"
-                  layout="intrinsic"
-                  width={150}
-                  height={150}
-                  objectFit="contain"
-                  style={articleStyle.image}
-                  />
-              </div>
-              <div style={articleStyle.detail}>
-                <p style={articleStyle.detail.title}>{article.title}</p>
-                <p style={articleStyle.detail.summary}>{article.summary}</p>
-                <p style={articleStyle.detail.date}>{article.date}</p>
-              </div>
+      {articles.map(article => (
+        <a key={article.id} href={`/article/${article.id}`} style={{width: '100%'}}>
+          <div style={articleStyle.list}>
+            <div>
+              <Image
+                src={article.image}
+                alt="ブログ画像"
+                layout="intrinsic"
+                width={150}
+                height={150}
+                objectFit="contain"
+                style={articleStyle.image}
+                />
             </div>
-          </a>
-        ))}
-
-      </main>
+            <div style={articleStyle.detail}>
+              <p style={articleStyle.detail.title}>{article.title}</p>
+              <p style={articleStyle.detail.summary}>{article.summary}</p>
+              <p style={articleStyle.detail.date}>{article.date}</p>
+            </div>
+          </div>
+        </a>
+      ))}
     </>
   )
 }
+
+Home.getInitialProps = () => {
+  return {
+    title: 'Top',
+    h1: '勉強でブログっぽいのを作ってみる',
+  };
+};
+
+export default Home;
