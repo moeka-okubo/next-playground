@@ -1,6 +1,6 @@
 import ComponentTest from "@/components/ComponentTest";
 import styled from "styled-components";
-import { commonTextStyle } from "../styles/commonStyle";
+import { commonTextStyle } from "../../styles/commonStyle";
 import { useState } from "react";
 import { Form } from "@/styles/Styled";
 
