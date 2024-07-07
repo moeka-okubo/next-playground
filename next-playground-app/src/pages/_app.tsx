@@ -1,4 +1,5 @@
 import CommonStyles from "@/components/CommonStyles";
+import "@/styles/globalStyle.css";
 import "@/styles/global.css";
 import { GlobalStyle } from "@/styles/globalStyles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
