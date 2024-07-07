@@ -1,3 +1,4 @@
+import CommonStyles from "@/components/CommonStyles";
 import "@/styles/global.css";
 import { GlobalStyle } from "@/styles/globalStyles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -12,6 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <GlobalStyle />
         <Component {...pageProps} />
+        <CommonStyles />
       </QueryClientProvider>
     </SWRConfig>
   );
