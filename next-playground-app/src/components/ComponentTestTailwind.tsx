@@ -5,7 +5,7 @@ type Props = {
   className?: string;
 };
 
-const ComponentTestModule: FC<Props> = ({
+const ComponentTestTailWind: FC<Props> = ({
   title = "デフォルトタイトル",
   className,
 }) => {
@@ -20,4 +20,4 @@ const ComponentTestModule: FC<Props> = ({
   );
 };
 
-export default memo(ComponentTestModule);
+export default memo(ComponentTestTailWind);

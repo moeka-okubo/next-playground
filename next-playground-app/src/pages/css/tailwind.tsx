@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ComponentTestTailWind from "@/components/ComponentTestTailWind";
+import ComponentTestTailWind from "@/components/ComponentTestTailwind";
 
 const TestPage = () => {
   const [value, setValue] = useState(0);
