@@ -34,7 +34,7 @@ const TestPage = () => {
       </div>
 
       <style jsx lang="sass">{`
-        header {
+        .header {
           height: 64px;
           background-color: #ef6100;
           position: fixed;

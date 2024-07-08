@@ -10,6 +10,8 @@
     "build:css": "tailwindcss -i ./src/styles/globalTail.css -o ./src/styles/output.css"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@tanstack/react-query": "^5.48.0",
     "next": "^14.0.4",
     "postcss-cli": "^11.0.0",
