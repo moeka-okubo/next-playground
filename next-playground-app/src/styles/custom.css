@@ -1,0 +1,9 @@
+.text {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.textWithTheme {
+  color: var(--primary-color);
+}

@@ -15,6 +15,13 @@ const nextConfig = {
     ],
     domains: ["images.unsplash.com"]
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader', 'postcss-loader'],
+    })
+    return config
+  },
 }
 
 module.exports = nextConfig
