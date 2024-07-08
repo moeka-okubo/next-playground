@@ -1,0 +1,51 @@
+.header {
+  height: 64px;
+  background-color: #ef6100;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.apply-number-form {
+  border: none;
+  border-radius: 4px;
+  width: 195px;
+  padding: 14px 8px;
+}
+
+.container {
+  background-color: white;
+  height: 100vh;
+  padding: 80px 16px 0;
+}
+
+.button {
+  background-color: initial;
+}
+
+.button.active {
+  background-color: #ef6100;
+}
+
+.text {
+  text-decoration: underline;
+}
+
+.form {
+  margin: 40px 16px;
+}
+
+/* コンポーネントで適用されるために渡すスタイル */
+.testPageYellowBackground {
+  background-color: yellow;
+}
+
+.example {
+  display: flex;
+  user-select: none;
+  transition: transform 1s;
+}

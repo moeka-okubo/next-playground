@@ -1,6 +1,7 @@
 import CommonStyles from "@/components/CommonStyles";
 import "@/styles/globalStyle.css";
 import "@/styles/global.css";
+import "@/styles/postOut.css";
 import { GlobalStyle } from "@/styles/globalStyles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
