@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import style from "../styles/component.module.css";
+import * as style from "../styles/component.module.css";
 
 type Props = {
   title?: string;

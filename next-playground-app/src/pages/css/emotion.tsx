@@ -49,7 +49,7 @@ const TestPage = () => {
         <h2 css={[commonTextStyle.styles, `text-decoration: underline;`]}>
           共通スタイルテスト
         </h2>
-        <ComponentTestEmotion />
+        <ComponentTestEmotion color="blue" width={80} />
         <p>{value}</p>
         <form>
           <button
@@ -57,6 +57,9 @@ const TestPage = () => {
             onClick={increaseValue}
             css={css`
               background-color: ${value % 2 === 1 ? `${orange}` : "initial"};
+              &:hover {
+                background-color: red;
+              }
             `}
           >
             送信

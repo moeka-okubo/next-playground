@@ -10,7 +10,7 @@ const TestPage = () => {
 
   return (
     <>
-      <header>
+      <header className="header">
         <input
           type="text"
           placeholder="画面コール番号"
@@ -33,7 +33,7 @@ const TestPage = () => {
         </Form>
       </div>
 
-      <style jsx lang="sass">{`
+      <style jsx>{`
         .header {
           height: 64px;
           background-color: #ef6100;
@@ -65,6 +65,9 @@ const TestPage = () => {
 
         .button {
           background-color: ${value % 2 === 1 ? "#ef6100" : "initial"};
+          &:hover {
+            background-color: red;
+          }
         }
 
         :global(.test.component) {

@@ -2,11 +2,14 @@
 import { memo } from "react";
 import { css } from "@emotion/react";
 
-const containerStyle = css`
-  background-color: #aff;
-`;
+const ComponentTestEmotion = (props) => {
+  const { title = "デフォルトタイトル", color = "#aff", width } = props;
 
-const ComponentTest = ({ title = "デフォルトタイトル" }) => {
+  const containerStyle = css`
+    background-color: ${color};
+    ${width !== undefined ? `margin-top: ${width}px;` : ""}
+  `;
+
   return (
     <>
       <h2>↓は `Container`というStyled Componentを適用している</h2>
@@ -18,4 +21,4 @@ const ComponentTest = ({ title = "デフォルトタイトル" }) => {
   );
 };
 
-export default memo(ComponentTest);
+export default memo(ComponentTestEmotion);
