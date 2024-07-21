@@ -40,6 +40,9 @@ const Container = styled.div`
 
 const Button = styled.button<ButtonProps>`
   background-color: ${(props) => (props.$isOdd ? "#ef6100" : "initial")};
+  &:hover {
+    background-color: #f00;
+  }
 `;
 
 const TestPage = () => {

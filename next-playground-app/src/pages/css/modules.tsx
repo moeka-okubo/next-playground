@@ -1,7 +1,7 @@
 import { useState } from "react";
-import common from "../../styles/common.module.css";
+import * as common from "../../styles/common.module.css";
 import ComponentTestModule from "@/components/ComponentTestModule";
-import style from "../../styles/modules.module.css";
+import * as style from "../../styles/modules.module.css";
 
 const TestPage = () => {
   const [value, setValue] = useState(0);
